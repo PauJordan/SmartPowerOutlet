@@ -1,0 +1,13 @@
+2x IRM-05-5 	F.A.230V/5V 1A 5W PCB
+2x VMA323	SENSOR DE CORRIENTE ACS712-20A
+2x ESP32ESP	WROOM-32 V2 - Placa Con WiFi Y Bluetooth
+3x 3611.9005	RELE FINDER 5V CC 10A
+10x 10k 1%
+10x 2k 1%
+ pin headers femella i mascle
+pcb 80 x 60
+
+10x 2n2222
+
+	
+

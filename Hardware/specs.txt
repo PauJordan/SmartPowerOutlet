@@ -1,0 +1,21 @@
+230V 3600W
+
+Nominal current 16A
+
+Pk current 23A
+
+
+Max current 20A
+
+4W -> Rshunt 10 mOhm
+
+Voltage values for various currents:
+Max Current 20A (3200 W): 200 mV
+Current 1,4 A (230 W): 14 mV
+
+Full Scale -> 200 mV Max Resolution: 4,8 mA
+ 
+
+
+
+
