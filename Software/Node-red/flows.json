@@ -1,0 +1,569 @@
+[
+    {
+        "id": "9630988cd43773a9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "95807c8a1a40dc3a",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3c5242632a5e9fdd",
+        "type": "mqtt-broker",
+        "name": "Raspberrypi",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6537bfecdf1b03c6",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "24648099ba33393a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "60cc7db076362332",
+        "type": "ui_group",
+        "name": "Control Panel",
+        "tab": "6537bfecdf1b03c6",
+        "order": 1,
+        "disp": true,
+        "width": "9",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ce6ad1505fcb7a42",
+        "type": "influxdb",
+        "hostname": "raspberrypi",
+        "port": "8086",
+        "protocol": "http",
+        "database": "ipanema",
+        "name": "Base de dades",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "8de1f57.4ca1108",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "testdb",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "2aeaf0fd6fd85240",
+        "type": "mqtt in",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "topic": "ipanema",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3c5242632a5e9fdd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 460,
+        "wires": [
+            [
+                "36fa587144acb362"
+            ]
+        ]
+    },
+    {
+        "id": "36fa587144acb362",
+        "type": "debug",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 340,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "70e4c71f7c4d2f71",
+        "type": "mqtt out",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "topic": "relay",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c5242632a5e9fdd",
+        "x": 650,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "52483af0b39947f2",
+        "type": "ui_switch",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "60cc7db076362332",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 510,
+        "y": 460,
+        "wires": [
+            [
+                "70e4c71f7c4d2f71",
+                "e9ff5c876fe65223"
+            ]
+        ]
+    },
+    {
+        "id": "e9ff5c876fe65223",
+        "type": "debug",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "31dc215d43aa7a9e",
+        "type": "debug",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "2f51281b7fd12ab8",
+        "type": "mqtt in",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "topic": "power",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c5242632a5e9fdd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 120,
+        "wires": [
+            [
+                "51ba73abe97481aa"
+            ]
+        ]
+    },
+    {
+        "id": "51ba73abe97481aa",
+        "type": "change",
+        "z": "9630988cd43773a9",
+        "name": "Prepare fields",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"power\": msg.payload.value}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "31dc215d43aa7a9e",
+                "b4ce29fee4f084ea"
+            ]
+        ]
+    },
+    {
+        "id": "b4ce29fee4f084ea",
+        "type": "influxdb out",
+        "z": "9630988cd43773a9",
+        "influxdb": "ce6ad1505fcb7a42",
+        "name": "",
+        "measurement": "test",
+        "precision": "ms",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 690,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "130f2bdd3a0dd6d9",
+        "type": "inject",
+        "z": "9630988cd43773a9",
+        "name": "timestamp",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "698e239262cf5bc8"
+            ]
+        ]
+    },
+    {
+        "id": "698e239262cf5bc8",
+        "type": "mqtt out",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "topic": "timestamp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c5242632a5e9fdd",
+        "x": 550,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "6093f4e1b031a030",
+        "type": "mqtt in",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "topic": "aenergy",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "3c5242632a5e9fdd",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 240,
+        "wires": [
+            [
+                "5aa0295a0d1837f9"
+            ]
+        ]
+    },
+    {
+        "id": "5aa0295a0d1837f9",
+        "type": "change",
+        "z": "9630988cd43773a9",
+        "name": "Prepare fields",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"aenergy\": msg.payload.value}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "e4c10d94aef94c28",
+                "b12098d4995b4a0d"
+            ]
+        ]
+    },
+    {
+        "id": "e4c10d94aef94c28",
+        "type": "influxdb out",
+        "z": "9630988cd43773a9",
+        "influxdb": "ce6ad1505fcb7a42",
+        "name": "",
+        "measurement": "test",
+        "precision": "ms",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 670,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b12098d4995b4a0d",
+        "type": "debug",
+        "z": "9630988cd43773a9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "ef9f8fa5.9cf55",
+        "type": "inject",
+        "z": "95807c8a1a40dc3a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "topic": "",
+        "payload": "1234",
+        "payloadType": "str",
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "44fbc619.7b5538"
+            ]
+        ]
+    },
+    {
+        "id": "6da5b5af.28b08c",
+        "type": "influxdb out",
+        "z": "95807c8a1a40dc3a",
+        "influxdb": "8de1f57.4ca1108",
+        "name": "",
+        "measurement": "test_2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "",
+        "retentionPolicyV18Flux": "",
+        "org": "",
+        "bucket": "",
+        "x": 600,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "44fbc619.7b5538",
+        "type": "function",
+        "z": "95807c8a1a40dc3a",
+        "name": "set timestamp",
+        "func": "msg.payload = {\n//    time: new Date(\"2015-12-28T19:41:15Z\").getTime(),\n    measurement1: 2,\n    measurement2: 0\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "6da5b5af.28b08c"
+            ]
+        ]
+    }
+]
